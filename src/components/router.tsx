@@ -1,14 +1,19 @@
-import { BrowserRouter, Route } from "react-router-dom";
-import { SecondForm } from "../pages/SecondForm/SecondForm";
-import { ThirdForm } from "../pages/ThirdForm/ThirdForm";
-import { FristForm } from "../pages/FristForm/FristForm";
+import { createBrowserRouter } from "react-router-dom";
+import { FristForm } from "../routes/FristForm";
+import { SecondForm } from "../routes/SecondForm";
+import { ThirdForm } from "../routes/ThirdForm";
 
-export function Router() {
-  return (
-    <BrowserRouter>
-      <Route path="/" Component={FristForm} />
-      <Route path="/step2" Component={SecondForm} />
-      <Route path="/step3" Component={ThirdForm} />
-    </BrowserRouter>
-  );
-}
+export default createBrowserRouter([
+  {
+    path: "/",
+    element: <FristForm />,
+  },
+  {
+    path: "/step2",
+    element: <SecondForm />,
+  },
+  {
+    path: "/step3",
+    element: <ThirdForm />,
+  },
+]);
