@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 export const StyledContainerFristForm = styled.div`
-  & p {
+  & h3 {
     font-size: 13px;
     color: #b8b8d4;
     padding-bottom: 30px;
@@ -29,6 +29,7 @@ export const StyledContainerFristForm = styled.div`
     color: #ffffff;
     font-size: 15px;
     background-color: #02044a;
+    outline: none;
   }
 
   & button {
