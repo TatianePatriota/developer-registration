@@ -2,11 +2,18 @@ import { useNavigate } from "react-router-dom";
 import { Theme } from "../components/Theme";
 import { StyledContainerFristForm } from "./StyledFristForm";
 import { FormActions, useForm } from "../contexts/FormContext";
-import { ChangeEvent } from "react";
+import { ChangeEvent, useEffect } from "react";
 
 export function FristForm() {
   const history = useNavigate();
   const { state, dispatch } = useForm();
+
+  useEffect(() => {
+    dispatch({
+      type: FormActions.setStep,
+      payload: 1,
+    });
+  });
 
   function handleNextStep() {
     history("/step2");
@@ -23,7 +30,7 @@ export function FristForm() {
     <Theme>
       <StyledContainerFristForm>
         <div>
-          <p>Passo 1/3 - {state.name}</p>
+          <p>Passo 1/3 </p>
           <h1>Digite o seu nome</h1>
           <h3>Preencha o campo abaixo com seu nome completo</h3>
 
