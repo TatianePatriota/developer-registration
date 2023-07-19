@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 export const StyledContainer = styled.div`
   padding: 25px 0;
-  border-bottom: 1px solid #16195c;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.darkBluePrimary};
 
   & h1 {
     margin: 0;
@@ -12,6 +12,6 @@ export const StyledContainer = styled.div`
 
   & p {
     font-size: 14px;
-    color: #b8b8d4;
+    color: ${({ theme }) => theme.colors.lightBlue};
   }
 `;
