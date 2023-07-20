@@ -1,8 +1,8 @@
 import { styled } from "styled-components";
 
 export const StyledContainer = styled.div`
-  background-color: #02044a;
-  color: #fff;
+  background-color: ${({ theme }) => theme.colors.darkBlueSecondary};
+  color: ${({ theme }) => theme.colors.white};
   min-height: 100vh;
 `;
 
@@ -21,7 +21,7 @@ export const StyledSteps = styled.div`
 
 export const StyledSidebar = styled.div`
   width: 250px;
-  border-right: 1px solid #16195c;
+  border-right: 1px solid ${({ theme }) => theme.colors.darkBluePrimary};
 `;
 
 export const StyledPage = styled.div`
