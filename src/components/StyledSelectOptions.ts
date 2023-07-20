@@ -1,8 +1,14 @@
 import { styled } from "styled-components";
 
-export const StyledContainerOptions = styled.div`
+export const StyledContainerOptions = styled.div<{ selected: boolean }>`
   display: flex;
-  border: 2px solid ${({ theme }) => theme.colors.darkBluePrimary};
+  border: 2px solid
+    ${({ theme, selected }) => {
+      if (selected) {
+        return theme.colors.green;
+      }
+      return theme.colors.darkBluePrimary;
+    }};
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 15px;
