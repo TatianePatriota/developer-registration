@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router-dom";
-import { Theme } from "../components/Theme";
-import { StyledContainerFristForm } from "./StyledFristForm";
+import { ThemeComponent } from "../components/ThemeComponent";
+import { StyledContainer } from "./StyledFristForm";
 import { FormActions, useForm } from "../contexts/FormContext";
 import { ChangeEvent, useEffect } from "react";
 
 export function FristForm() {
+  const alertInput: HTMLElement | null = document.getElementById("alertText");
   const history = useNavigate();
   const { state, dispatch } = useForm();
 
@@ -13,10 +14,14 @@ export function FristForm() {
       type: FormActions.setStep,
       payload: 1,
     });
-  });
+  }, []);
 
   function handleNextStep() {
-    history("/step2");
+    if (state.name !== "") {
+      history("/step2");
+    } else if (alertInput) {
+      alertInput.style.display = "block";
+    }
   }
 
   function handleNameChange(e: ChangeEvent<HTMLInputElement>) {
@@ -27,8 +32,8 @@ export function FristForm() {
   }
 
   return (
-    <Theme>
-      <StyledContainerFristForm>
+    <ThemeComponent>
+      <StyledContainer>
         <div>
           <p>Passo 1/3 </p>
           <h1>Digite o seu nome</h1>
@@ -39,12 +44,12 @@ export function FristForm() {
             type="text"
             name="name"
             autoFocus
-            value={state.name}
             onChange={handleNameChange}
           />
+          <h5 id="alertText">Você deve inserir seu nome</h5>
           <button onClick={handleNextStep}>Próximo</button>
         </div>
-      </StyledContainerFristForm>
-    </Theme>
+      </StyledContainer>
+    </ThemeComponent>
   );
 }
