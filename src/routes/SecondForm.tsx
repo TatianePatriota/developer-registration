@@ -7,7 +7,6 @@ import { SelectOptions } from "../components/SelectOptions";
 import { Link } from "react-router-dom";
 
 export function SecondForm() {
-  const alertInput: HTMLElement | null = document.getElementById("alertText");
   const history = useNavigate();
   const { state, dispatch } = useForm();
 
@@ -24,9 +23,7 @@ export function SecondForm() {
 
   function handleNextStep() {
     if (state.name !== "") {
-      history("/step2");
-    } else if (alertInput) {
-      alertInput.style.display = "block";
+      history("/step3");
     }
   }
 
@@ -61,7 +58,6 @@ export function SecondForm() {
             onClick={() => setLevel(1)}
           />
 
-          <h5 id="alertText">Você deve inserir seu nome</h5>
           <Link className="backButton" to="/">
             Voltar
           </Link>
