@@ -21,10 +21,11 @@ export const StyledContainer = styled.div`
   }
 
   & label {
-    font-size: 13px;
+    font-size: 15px;
   }
 
   & input {
+    margin-bottom: 20px;
     margin-top: 7px;
     display: block;
     box-sizing: border-box;
