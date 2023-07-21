@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FormActions, useForm } from "../contexts/FormContext";
 import { ThemeComponent } from "../components/ThemeComponent";
-import { StyledContainer } from "./StyledFristForm";
+import { StyledContainer } from "../components/StyledForm";
 import { SelectOptions } from "../components/SelectOptions";
 import { Link } from "react-router-dom";
 
