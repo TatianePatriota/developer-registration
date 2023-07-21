@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { ThemeComponent } from "../components/ThemeComponent";
-import { StyledContainer } from "./StyledFristForm";
+import { StyledContainer } from "../components/StyledForm";
 import { FormActions, useForm } from "../contexts/FormContext";
 import { ChangeEvent, useEffect } from "react";
 
