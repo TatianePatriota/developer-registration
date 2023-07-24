@@ -20,6 +20,7 @@ export type SidebarItemType = {
   description: string;
   iconName: IconsName;
   path: string;
+  active: boolean;
 };
 
 export type itemType = {
@@ -44,6 +45,7 @@ export function SidebarItem({
   description,
   iconName,
   path,
+  active,
 }: SidebarItemType) {
   return (
     <StyledSidebarItem>
@@ -52,10 +54,10 @@ export function SidebarItem({
           <StyledTitle>{title}</StyledTitle>
           <StyledDescription>{description}</StyledDescription>
         </StyledInfo>
-        <StyledIconArea>
+        <StyledIconArea active={active}>
           <SidebarIcons iconSidebar={iconName} />
         </StyledIconArea>
-        <StyledPoint></StyledPoint>
+        <StyledPoint active={active} />
       </Link>
     </StyledSidebarItem>
   );
