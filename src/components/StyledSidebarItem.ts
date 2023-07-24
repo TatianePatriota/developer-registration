@@ -30,11 +30,13 @@ export const StyledDescription = styled.div`
   font-size: 14px;
 `;
 
-export const StyledIconArea = styled.div`
+export const StyledIconArea = styled.div<{ active: boolean }>`
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: ${({ theme }) => theme.colors.darkGrey};
+  background-color: ${({ theme, active }) =>
+    active ? theme.colors.green : theme.colors.darkGrey};
+  display: flex;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,11 +48,13 @@ export const StyledIconArea = styled.div`
   }
 `;
 
-export const StyledPoint = styled.div`
-  width: 7px;
-  height: 7px;
+export const StyledPoint = styled.div<{ active: boolean }>`
+  width: 8px;
+  height: 8px;
   border: 3px solid ${({ theme }) => theme.colors.darkGrey};
   border-radius: 50%;
   margin-left: 30px;
-  margin-right: -7px;
+  margin-right: -8px;
+  background-color: ${({ theme, active }) =>
+    active ? theme.colors.green : theme.colors.darkGrey};
 `;
